@@ -49,6 +49,7 @@ def annotation2ACF(imageSrcDir,imageFacePos,facePosOutDir,imageOutDir):
                 fout.write(' 0 0 0 0 0\n')
             fout.close()
 
+# Because of some algorithm only need rgb image such as ACF
 def deleteGrayImage(imageSrcDir,txtSrcDir):
     # scan all image file
     for parent,dirNames,fileNames in os.walk(imageSrcDir):
@@ -61,8 +62,6 @@ def deleteGrayImage(imageSrcDir,txtSrcDir):
                 print txtName
                 os.remove(imageSrcDir + imageName)
                 os.remove(txtSrcDir + txtName)
-            #image.release()
-
 
 '''
 annotation2ACF('E:\FaceDetectionBenchmark\AFLW\Data\data2\\flickr\\2/',
@@ -71,5 +70,8 @@ annotation2ACF('E:\FaceDetectionBenchmark\AFLW\Data\data2\\flickr\\2/',
                'E:\MatlabProject\piotr_toolbox\\toolbox\FaceData\\train\posProfile/')
 '''
 
+'''
+
 deleteGrayImage('E:\MatlabProject\piotr_toolbox\\toolbox\FaceData\\train\posProfile/',
                 'E:\MatlabProject\piotr_toolbox\\toolbox\FaceData\\train\posProfileGt/')
+'''
